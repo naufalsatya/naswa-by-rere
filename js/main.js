@@ -1,19 +1,19 @@
-
 window.onload = () => {
+  // Set a timeout to simulate a delay before removing the "not-loaded" class
   const timeoutId = setTimeout(() => {
     document.body.classList.remove("not-loaded");
 
     // Split the title into characters
     const titles = ' nasywaaa'.split('');
     const backgroundMusic = document.getElementById('backgroundMusic');
-    const titleElement = document.querySelector('.title'); // Update to use class selector
+    const titleElement = document.querySelector('.title'); // Ensure this class is correct
 
     let index = 0;
 
     // Function to append characters to the title element
     function appendTitle() {
       if (index < titles.length) {
-        titleElement.innerHTML += titles[index];
+        titleElement.innerHTML += `<span>${titles[index]}</span>`; // Wrap each character in a span for potential styling
         index++;
         setTimeout(appendTitle, 300); // 300ms delay between characters
       }
@@ -36,6 +36,6 @@ window.onload = () => {
       }
     }
 
-    clearTimeout(timeoutId);
+    clearTimeout(timeoutId); // Clear timeout to prevent memory leaks
   }, 1000);
 };
