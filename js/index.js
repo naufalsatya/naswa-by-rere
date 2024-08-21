@@ -4,7 +4,7 @@ const backgroundMusic = document.getElementById('backgroundMusic');
 
 // Menambahkan pemutaran musik latar saat halaman dimuat
 window.addEventListener('load', () => {
-  backgroundMusic.volume = 0.5; // Atur volume jika diperlukan
+  backgroundMusic.volume = 5.0; // Atur volume jika diperlukan
   backgroundMusic.play().catch(error => {
     console.log('Autoplay is blocked. User interaction required.');
   });
